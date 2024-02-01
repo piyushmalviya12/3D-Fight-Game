@@ -1,0 +1,67 @@
+{
+  "query": {
+    "inferenceIds": [],
+    "assetIds": [
+      "bqG5aHH6TySOKrd73f6ONQ",
+      "W2HtyIQsQbeMhTBjF_i6bw",
+      "QoaRfzP8TJmdUl9nXM2X9A",
+      "FUuOp6BrScOSQ9rTYjDXcA"
+    ],
+    "modelIds": []
+  },
+  "options": {
+    "fileNameTemplate": "mainMenuAssets",
+    "flat": true
+  },
+  "count": 4,
+  "assets": [
+    {
+      "path": "mainMenuAssets-1.png",
+      "id": "W2HtyIQsQbeMhTBjF_i6bw",
+      "tags": [],
+      "type": "inference-txt2img",
+      "generator": {
+        "name": "Gritty UI + Stylized Fantasy"
+      },
+      "prompt": "game UI Main menu like buttons and backgrounds, simple rectangle buttons, panel background",
+      "negativePrompt": "",
+      "seed": "14469920657798513981"
+    },
+    {
+      "path": "mainMenuAssets-2.png",
+      "id": "bqG5aHH6TySOKrd73f6ONQ",
+      "tags": [],
+      "type": "inference-txt2img",
+      "generator": {
+        "name": "Gritty UI + Stylized Fantasy"
+      },
+      "prompt": "game UI Main menu like buttons and backgrounds, simple rectangle buttons, panel background",
+      "negativePrompt": "",
+      "seed": "4153029107772174574"
+    },
+    {
+      "path": "mainMenuAssets-3.png",
+      "id": "FUuOp6BrScOSQ9rTYjDXcA",
+      "tags": [],
+      "type": "inference-txt2img",
+      "generator": {
+        "name": "Gritty UI + Stylized Fantasy"
+      },
+      "prompt": "game UI Main menu like buttons and backgrounds",
+      "negativePrompt": "",
+      "seed": "3200792400239065969"
+    },
+    {
+      "path": "mainMenuAssets-4.png",
+      "id": "QoaRfzP8TJmdUl9nXM2X9A",
+      "tags": [],
+      "type": "inference-txt2img",
+      "generator": {
+        "name": "Gritty UI + Stylized Fantasy"
+      },
+      "prompt": "game UI Main menu like buttons and backgrounds",
+      "negativePrompt": "",
+      "seed": "16207052445029717524"
+    }
+  ]
+}
