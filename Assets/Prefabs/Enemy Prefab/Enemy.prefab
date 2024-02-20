@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 7995342036471677581}
   - component: {fileID: 7995342036464201069}
   - component: {fileID: 7995342036471677580}
+  - component: {fileID: 1153290402}
   m_Layer: 7
   m_Name: Enemy Child
   m_TagString: Untagged
@@ -259,6 +260,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8737238b861cc4fb6a226785ba4cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1153290402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995342036471586477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6384f1e70f0f1d41a47d245b8d24f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandAttackPoint: {fileID: 0}
+  rightHandAttackPoint: {fileID: 0}
+  leftLegAttackPoint: {fileID: 0}
+  rightLegAttackPoint: {fileID: 0}
+  standUp_Time: 2
 --- !u!1 &7995342036471586479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,3 +2092,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_HealthBar: {fileID: 0}
   player_BarSizeDecreaseBy: 0.03
+  health: 100
+  isPlayer: 0
