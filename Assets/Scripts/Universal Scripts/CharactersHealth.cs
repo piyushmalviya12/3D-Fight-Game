@@ -6,53 +6,36 @@ using UnityEngine.UI;
 public class CharactersHealth : MonoBehaviour
 {
     private CharacterAnimation animationScript;
-    private EnemyMovement enemyMovement;
+    private HealthUI healthUI;
 
-    public Scrollbar player_HealthBar;
-    public float player_BarSizeDecreaseBy = 0.03f;
 
     public float health = 100f;
     public bool isPlayer;
     private bool characterDied;
 
    
-    /*public Scrollbar enemy_HealthBar;
-    public float enemy_BarSizeDecreaseBy = 0.03f;*/
-
-
-   
     private void Awake()
     {
         animationScript = GetComponentInChildren<CharacterAnimation>();
-    }
 
-    // Player
-
-    public void PlayerHealthBar()
-    {
-        if (player_HealthBar.size != 0)
+        if (isPlayer)
         {
-            player_HealthBar.size -= player_BarSizeDecreaseBy;
-        }
-        if(player_HealthBar.size == 0)
-        {
-            //player_Anim.Death();
+            healthUI = GetComponent<HealthUI>();
         }
        
     }
-    
-    // Enemy
-   /* public void EnemyHealthBar()
-    {
-        enemy_HealthBar.size -= enemy_BarSizeDecreaseBy;
-    }*/
-   
+
+
     public void ApplyDamage(float damage, bool knockDown)
     {
         if (characterDied)
             return;
 
         health -= damage;
+        if (isPlayer)
+        {
+            healthUI.DisplayHealth(health);
+        }
 
         if(health <=0f)
         {
@@ -61,7 +44,7 @@ public class CharactersHealth : MonoBehaviour
 
             if (isPlayer)
             {
-
+                GameObject.FindWithTag(Tags.ENEMY_TAG).GetComponent<EnemyMovement>().enabled = false;
             }
             return;
         }
@@ -77,11 +60,11 @@ public class CharactersHealth : MonoBehaviour
             }
             else
             {
-                animationScript.Hit();
-                /* if (Random.Range(0, 3) > 1)
-                 {
-                     animationScript.Hit();
-                 }*/
+             
+                if (Random.Range(0, 3) > 1)
+                {
+                    animationScript.Hit();
+                }
             }
         }
 

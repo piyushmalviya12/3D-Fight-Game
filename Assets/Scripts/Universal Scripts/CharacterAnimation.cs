@@ -89,8 +89,5 @@ public class CharacterAnimation : MonoBehaviour
         anim.SetTrigger(AnimationTags.DEATH_TRIGGER);
     }
 
-    internal void EnemyAttack(object p)
-    {
-        throw new NotImplementedException();
-    }
+    
 }  //class

@@ -6,13 +6,13 @@ public class CharacterAnimationDelegate : MonoBehaviour
 {
    private EnemyMovement enemyMovement;
    public GameObject leftHandAttackPoint, rightHandAttackPoint ,leftLegAttackPoint ,rightLegAttackPoint;
-   public float standUp_Time = 2f;
+   public float standUp_Time = 3f;
    private CharacterAnimation animationScript;
 
     private AudioSource audioSource;
 
     [SerializeField]
-    private AudioClip whooshSound, fall_Sound, groundHit_Sound, dead_Sound;
+    private AudioClip whooshSound, fall_Sound, groundHit_Sound, enemyDead_Sound, playerDead_Sound;
 
     private void Awake()
     {
@@ -105,4 +105,67 @@ public class CharacterAnimationDelegate : MonoBehaviour
         yield return new WaitForSeconds(standUp_Time);
         animationScript.StandUp();
     }
+
+
+    public void AttackFX_Sound()
+    {
+        audioSource.volume = 0.2f;
+        audioSource.clip = whooshSound;
+        audioSource.Play();
+    }
+    public void Enemy_FallFX_Sound()
+    {
+        audioSource.volume = 0.3f;
+        audioSource.clip = fall_Sound;
+        audioSource.Play();
+    }
+    public void Enemy_GroundHitFX_Sound()
+    {
+        audioSource.volume = 1f;
+        audioSource.clip = groundHit_Sound;
+        audioSource.Play();
+    }
+    
+    public void EnemyDeadFX_Sound()
+    {
+        audioSource.volume = 1f;
+        audioSource.clip = enemyDead_Sound;
+        audioSource.Play();
+    }
+    public void PlayerDeadFX_Sound()
+    {
+        audioSource.volume = 1f;
+        audioSource.clip = playerDead_Sound;
+        audioSource.Play();
+    }
+
+    public void DisableMovement()
+    {
+        enemyMovement.enabled = false;
+        transform.parent.gameObject.layer = 0;
+    }
+    public void EnableMovement()
+    {
+        enemyMovement.enabled = true;
+        transform.parent.gameObject.layer = 7;
+    }
+
+    public  void CharacterDied()
+    {
+        Invoke("DeactivateGameObject", 2f);
+    }
+
+    public void DeactivateGameObject()
+    {
+        EnemyManager.instance.EnemySpawn();
+        gameObject.SetActive(false);
+    }
+
+
+
+
+
+
+
+
 }

@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 2868136136518343097}
   - component: {fileID: 316409351}
   - component: {fileID: 983177283}
+  - component: {fileID: 7679895296048611591}
   - component: {fileID: 1203652109905990313}
   m_Layer: 6
   m_Name: Player
@@ -332,6 +333,18 @@ MonoBehaviour:
   player_BarSizeDecreaseBy: 0.03
   health: 100
   isPlayer: 1
+--- !u!114 &7679895296048611591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020409477700762447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49dfd8faba2d5554aa94ab00f658892d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1203652109905990313
 AudioSource:
   m_ObjectHideFlags: 0
@@ -662,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 100110, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100110, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100112, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
       propertyPath: m_Layer
@@ -2187,6 +2204,102 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100110, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
   m_PrefabInstance: {fileID: 7020409476796006689}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &417439464
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020409476796106287}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &410301829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2317,11 @@ MonoBehaviour:
   leftLegAttackPoint: {fileID: 849090862}
   rightLegAttackPoint: {fileID: 1406763794}
   standUp_Time: 2
+  whooshSound: {fileID: 8300000, guid: 5e0cf3b0fa052ea42869e36433004c0b, type: 3}
+  fall_Sound: {fileID: 8300000, guid: a2515a9d05bc54a4abf89fb7ab479a3e, type: 3}
+  groundHit_Sound: {fileID: 8300000, guid: 2844bf87bee2d9e4589fdae83779cea6, type: 3}
+  enemyDead_Sound: {fileID: 0}
+  playerDead_Sound: {fileID: 0}
 --- !u!114 &2009517647
 MonoBehaviour:
   m_ObjectHideFlags: 0
