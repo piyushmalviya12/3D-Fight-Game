@@ -29,11 +29,11 @@ public class UniversalAttack : MonoBehaviour
                 Vector3 hitFX_pos = hit[0].transform.position;
                 hitFX_pos.y += 1.3f;
 
-                if (hit[0].transform.position.x > 0)
+                if (hit[0].transform.forward.x > 0)
                 {
                     hitFX_pos.x += 0.3f;
                 }
-                else if (hit[0].transform.position.x < 0)
+                else if (hit[0].transform.forward.x < 0)
                 {
                     hitFX_pos.x -= 0.3f;
                 }

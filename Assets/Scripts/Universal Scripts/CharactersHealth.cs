@@ -7,6 +7,7 @@ public class CharactersHealth : MonoBehaviour
 {
     private CharacterAnimation animationScript;
     private HealthUI healthUI;
+    private GameUI gameUI;
 
 
     public float health = 100f;
@@ -45,6 +46,9 @@ public class CharactersHealth : MonoBehaviour
             if (isPlayer)
             {
                 GameObject.FindWithTag(Tags.ENEMY_TAG).GetComponent<EnemyMovement>().enabled = false;
+                gameUI.GamePause();
+                
+
             }
             return;
         }
