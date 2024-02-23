@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 7995342036471677580}
   - component: {fileID: 1153290402}
   - component: {fileID: 4358132329178297261}
+  - component: {fileID: 3544770309831827773}
   m_Layer: 7
   m_Name: Enemy Child
   m_TagString: Enemy
@@ -587,6 +588,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3544770309831827773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995342036471586477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ea0837a1d4fbd4386fc35174f783ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseBtn: {fileID: 0}
+  popUpCloseBtn: {fileID: 0}
+  resumeBtn: {fileID: 0}
+  quitBtn: {fileID: 0}
+  mainMenuBtn: {fileID: 0}
+  replayBtn: {fileID: 0}
+  musicToggle: {fileID: 0}
+  popUpPanel: {fileID: 0}
+  musicAudio: {fileID: 0}
 --- !u!1 &7995342036471586479
 GameObject:
   m_ObjectHideFlags: 0

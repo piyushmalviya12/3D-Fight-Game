@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
 
     public void PlayBtn()
     {
+      
         SceneManager.LoadScene(sceneName);
     }
     public void QuitBtn()

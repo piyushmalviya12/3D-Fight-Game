@@ -8,6 +8,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
    public GameObject leftHandAttackPoint, rightHandAttackPoint ,leftLegAttackPoint ,rightLegAttackPoint;
    public float standUp_Time = 3f;
    private CharacterAnimation animationScript;
+    
 
     private AudioSource audioSource;
 
@@ -18,6 +19,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     {
         animationScript = GetComponent<CharacterAnimation>();
         audioSource = GetComponent<AudioSource>();
+        
         if (gameObject.CompareTag(Tags.ENEMY_TAG))
         {
             enemyMovement = GetComponentInParent<EnemyMovement>();
@@ -161,7 +163,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
+   
 
 
 

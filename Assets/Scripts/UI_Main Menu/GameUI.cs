@@ -7,25 +7,30 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
-    public Button pauseBtn, popUpCloseBtn, playBtn, quitBtn, mainMenuBtn, replayBtn;
-    public Toggle soundToggle, musicToggle;
+    public Button pauseBtn, popUpCloseBtn, resumeBtn, quitBtn, mainMenuBtn, replayBtn;
+    public Toggle /*soundToggle,*/ musicToggle;
     public GameObject popUpPanel;
     public AudioSource musicAudio /*enemySoundAudio, playerSoundAudio*/;
+
+    private CharactersHealth charactersHealth;
 
     private void Awake()
     {
         pauseBtn.onClick.AddListener(GamePause);
-        playBtn.onClick.AddListener(GameResume);
+        resumeBtn.onClick.AddListener(GameResume);
         mainMenuBtn.onClick.AddListener(GoToMainMenu);
         quitBtn.onClick.AddListener(QuitGame);
         musicToggle.onValueChanged.AddListener(MusicToggle);
-        //  soundToggle.onValueChanged.AddListener(SoundToggle);
+        
         replayBtn.onClick.AddListener(GameReplay);
         popUpCloseBtn.onClick.AddListener(ClosePanel);
 
 
-       
-        
+        charactersHealth = GetComponent<CharactersHealth>();
+
+
+
+
     }
 
     public void GamePause()
@@ -34,9 +39,12 @@ public class GameUI : MonoBehaviour
         musicAudio.gameObject.SetActive(false);
         Time.timeScale = 0;
 
+        resumeBtn.gameObject.SetActive(true);
+
     }
     public void GameResume()
     {
+        resumeBtn.gameObject.SetActive(false);
         popUpPanel.gameObject.SetActive(false);
         musicAudio.gameObject.SetActive(true);
         Time.timeScale = 1;
@@ -45,6 +53,7 @@ public class GameUI : MonoBehaviour
     public void GameReplay()
     {
         popUpPanel.gameObject.SetActive(false);
+        resumeBtn.gameObject.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         GameResume();
     }
@@ -63,34 +72,7 @@ public class GameUI : MonoBehaviour
             musicAudio.gameObject.SetActive(false);
         }
     }
-    /*public void SoundToggle(bool isOn)
-    {
-        if (isOn == true)
-        {
-*//*
-            enemySoundAudio.gameObject.SetActive(true);
-            playerSoundAudio.gameObject.SetActive(true);*//*
-
-            playerSoundAudio.GetComponent<AudioSource>().gameObject.SetActive(true);
-            enemySoundAudio.GetComponent<AudioSource>().gameObject.SetActive(true);
-
-        }
-        if (isOn == false)
-        {
-
-            *//*     enemySoundAudio.gameObject.SetActive(false);
-                 playerSoundAudio.gameObject.SetActive(false);*//*
-
-            playerSoundAudio.GetComponent<AudioSource>().gameObject.SetActive(false);
-            enemySoundAudio.GetComponent<AudioSource>().gameObject.SetActive(false);
-
-        }
-       
-
-
-    
-      
-    }*/
+   
     public void QuitGame()
     {
         Application.Quit();
@@ -100,5 +82,13 @@ public class GameUI : MonoBehaviour
         popUpPanel.gameObject.SetActive(false);
     }
 
+    public void GamePauseAfterPlayerDied()
+    {
+        popUpPanel.gameObject.SetActive(true);
+        musicAudio.gameObject.SetActive(false);
+        Time.timeScale = 0;
+        resumeBtn.gameObject.SetActive(false);
+        musicToggle.gameObject.SetActive(false);
 
+    }
 }
